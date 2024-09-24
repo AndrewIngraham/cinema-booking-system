@@ -14,6 +14,11 @@ function createMovie(m) {
   const div = document.createElement("div");
   div.setAttribute("class", "movie");
 
+  const iframe = document.createElement("iframe");
+  iframe.setAttribute("src", m.trailerVideoUrl);
+  iframe.setAttribute("alt", `${m.title} Trailer`);
+  iframe.setAttribute("height", "300");
+
   const img = document.createElement("img");
   img.setAttribute("src", m.trailerPictureUrl);
   img.setAttribute("alt", `${m.title} Poster`);
@@ -31,6 +36,7 @@ function createMovie(m) {
   a.setAttribute("class", "btn");
   a.textContent = "Book Now";
 
+  div.appendChild(iframe);
   div.appendChild(img);
   div.appendChild(h3);
   div.appendChild(p);
